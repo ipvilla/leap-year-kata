@@ -12,5 +12,13 @@ namespace LeapYearTest
 
             Assert.IsTrue(isALeapYear);
         }
+
+        [Test]
+        public void not_consider_1997_a_leap_year()
+        {
+            var isALeapYear = LeapYearChecker.IsLeapYear(1997);
+
+            Assert.IsFalse(isALeapYear);
+        }
     }
 }
