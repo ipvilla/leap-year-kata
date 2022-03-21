@@ -5,10 +5,11 @@ namespace LeapYearTest
 {
     public class LeapYearCheckerShould
     {
-        [Test]
-        public void consider_1996_a_leap_year()
+        [TestCase(1996)]
+        [TestCase(2004)]
+        public void consider_leap_years_those_divisible_by_4_and_not_by_100(int year)
         {
-            var isALeapYear = LeapYearChecker.IsLeapYear(1996);
+            var isALeapYear = LeapYearChecker.IsLeapYear(year);
 
             Assert.IsTrue(isALeapYear);
         }
@@ -29,34 +30,12 @@ namespace LeapYearTest
             Assert.IsTrue(isALeapYear);
         }
 
-        [Test]
-        public void consider_2004_a_leap_year()
+        [TestCase(2100)]
+        [TestCase(2200)]
+        [TestCase(2300)]
+        public void not_consider_leap_years_those_divisible_by_4_and_100_but_not_by_400(int year)
         {
-            var isALeapYear = LeapYearChecker.IsLeapYear(2004);
-
-            Assert.IsTrue(isALeapYear);
-        }
-
-        [Test]
-        public void not_consider_2100_a_leap_year()
-        {
-            var isALeapYear = LeapYearChecker.IsLeapYear(2100);
-
-            Assert.IsFalse(isALeapYear);
-        }
-
-        [Test]
-        public void not_consider_2200_a_leap_year()
-        {
-            var isALeapYear = LeapYearChecker.IsLeapYear(2200);
-
-            Assert.IsFalse(isALeapYear);
-        }
-
-        [Test]
-        public void not_consider_2300_a_leap_year()
-        {
-            var isALeapYear = LeapYearChecker.IsLeapYear(2300);
+            var isALeapYear = LeapYearChecker.IsLeapYear(year);
 
             Assert.IsFalse(isALeapYear);
         }
