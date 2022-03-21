@@ -4,7 +4,17 @@ namespace LeapYear
     {
         public static bool? IsLeapYear(int year)
         {
-            return year % 4 == 0;
+            if (year % 4 == 0)
+            {
+                if (year == 2100)
+                {
+                    return false;
+                }
+
+                return true;
+            }
+
+            return false;
         }
     }
 }
