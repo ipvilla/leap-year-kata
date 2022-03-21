@@ -6,7 +6,7 @@ namespace LeapYear
         {
             if (year % 4 == 0)
             {
-                if (year == 2100 || year == 2200 || year == 2300)
+                if (year % 100 == 0 && year % 400 != 0)
                 {
                     return false;
                 }
